@@ -62,3 +62,53 @@ btnSegundosMenos.addEventListener("click",()=>{
 })
 
 
+/* Funcion para iniciar  */
+function iniciarTemporizador(){
+    let timeT = (tH * 60 * 60) + (tM * 60) + tS;
+    timer = setInterval(()=>{
+        if (timeT != 0) {
+            timeT--
+            horas.innerHTML = parseInt(timeT / 3600)
+            minutos.innerHTML = parseInt(timeT / 60)
+            segundos.innerHTML = timeT%60
+            if(timeT == 0){
+                btnStart.disabled = false;
+                clearInterval(timer)
+                tH = 0;
+                tM = 0;
+                tS = 0;
+            }
+        }
+        else{
+            btnStart.disabled = false;
+            clearInterval(timer)
+            tH = 0;
+            tM = 0;
+            tS = 0;
+        }
+        
+    },1000)
+}
+
+function terminarTemporizador(){
+    clearInterval(timer)
+    tH = 0;
+    tM = 0;
+    tS = 0;
+    horas.innerHTML = tH
+    minutos.innerHTML = tM
+    segundos.innerHTML =tS
+}
+
+btnStart.addEventListener("click",()=>{
+    iniciarTemporizador()
+    btnStart.disabled = true;
+    btnStop.disabled = false
+    
+})
+
+btnStop.addEventListener("click",()=>{
+    terminarTemporizador()
+    btnStart.disabled = false;
+    btnStop.disabled = true
+})
