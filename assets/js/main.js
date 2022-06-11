@@ -91,7 +91,7 @@ function iniciarTemporizador(){
         if (timeT != 0) {
             timeT--;
             horas.innerHTML = parseInt(timeT / 3600);
-            minutos.innerHTML = parseInt(timeT / 60);
+            minutos.innerHTML = parseInt((timeT / 60)%60);
             segundos.innerHTML = timeT%60;
             if(timeT == 0){
                 iniciado = false;
