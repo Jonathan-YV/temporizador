@@ -15,6 +15,7 @@ Página web que simula un temporizador utilizando HTML, CSS, JavaScript y el fra
 
 ## Características
 * API audio
+* Responsive
 * Horas, minutos y segundos
 
 

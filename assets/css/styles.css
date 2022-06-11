@@ -7,6 +7,7 @@ body{
     height: 100vh;
     
     display: flex;
+   
     align-items: flex-start;
     justify-content: flex-end;
 
@@ -41,7 +42,8 @@ body{
     background-size: cover;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.404);
     
-    height: 180px;
+    height: auto;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,4 +104,25 @@ body{
     text-align: center;
     display: block;
     border: none;
+}
+
+@media (max-width: 760px) {
+    .timer{
+        flex-direction: column;
+    }
+
+    body{
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        background-position: -400px 0;
+    }
+
+    .start, .stop{
+        margin: 10px auto;
+    }
+
+    .start-stop{
+        width: 100%;
+    }
 }
